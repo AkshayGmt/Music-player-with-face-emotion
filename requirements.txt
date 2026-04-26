@@ -2,3 +2,8 @@ streamlit
 numpy
 opencv-python-headless
 pillow
+fastapi
+uvicorn
+jinja2
+python-multipart
+google-api-python-client
