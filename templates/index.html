@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Music App</title>
+</head>
+<body>
+
+<h2>Upload Image</h2>
+
+<form action="/predict" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <button type="submit">Detect Emotion</button>
+</form>
+
+{% if emotion %}
+    <h3>Detected Emotion: {{ emotion }}</h3>
+
+    <h3>Recommended Videos:</h3>
+    {% for title, url in videos %}
+        <p>{{ title }}</p>
+        <iframe width="400" height="250" src="{{ url | replace('watch?v=', 'embed/') }}" frameborder="0" allowfullscreen></iframe>
+        <br><br>
+    {% endfor %}
+{% endif %}
+
+</body>
+</html>
